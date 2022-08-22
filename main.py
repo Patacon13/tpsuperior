@@ -25,6 +25,7 @@ N = len(potenciales)
 T = 1.0 / (0.0001 * 2)
 
 x_f = np.linspace(0.0, T, N//2)
+print(len(x_f))
 y_f = fft(potencialesArray)
 
 plt.plot(x_f, np.abs(y_f[:N//2]))

@@ -30,12 +30,23 @@ funcionEscalon = []
 
 
 for i in range (0, 1000):
-    funcionEscalon.append(1/(2*a))
+    if i < a or i > 1000 - a:
+        funcionEscalon.append(1/(2*a))
+    else:
+        funcionEscalon.append(0)
 
 funcionConvolucionada = np.convolve(y_f, funcionEscalon)
 
 print(len(funcionConvolucionada))
 
-plt.plot(x_f, funcionConvolucionada[999:])
+x_escalon = []
+
+for i in range (0, 1000):
+    x_escalon.append(i)
+
+    
+plt.plot(x_escalon, funcionEscalon)
+
+#plt.plot(x_f, funcionConvolucionada[999:])
 
 plt.show()
